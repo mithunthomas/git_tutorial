@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hi</groupId>
+  <artifactId>hai-ahamed</artifactId>
+  <packaging>war</packaging>
+  <version>1.12.0</version>
+  <name>hai-world Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+	 <distributionManagement>
+    <repository>
+      <id>ssh-repository</id>
+      <url>scpexe://ec2-54-173-37-172.compute-1.amazonaws.com/var/tomcat8/webapps</url>
+    </repository>
+  </distributionManagement>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+        <extensions>
+      <!-- Enabling the use of SSH -->
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ssh-external</artifactId>
+         <version>1.0-beta-6</version>
+      </extension>
+    </extensions>	
+    <finalName>indmax-demo</finalName>
+  </build>
+</project>
